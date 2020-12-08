@@ -1,6 +1,6 @@
 version: "3.5"
 services:
-  rabbitmq:
+  codeflix_rabbitmq:
     image: rabbitmq:3.8-management-alpine
     hostname: rabbitmq
     ports:
@@ -13,8 +13,8 @@ services:
       - RABBITMQ_DEFAULT_USER=root
       - RABBITMQ_DEFAULT_PASS=root
     networks:
-      - rabbitmq
+      - codeflix_rabbitmq
 
 networks:
-  rabbitmq:
+  codeflix_rabbitmq:
     driver: bridge

@@ -7,7 +7,7 @@ services:
       - 15672:15672 #Interface
       - 5672:5672 #Rabbitmq
     volumes:
-      - .data/rabbitmq:/var/lib/rabbitmq/mnesia
+      - volume_rabbitmq:/var/lib/rabbitmq/mnesia
     environment:
       - RABBITMQ_DEFAULT_VHOST=rabbitmq
       - RABBITMQ_DEFAULT_USER=root
@@ -18,3 +18,7 @@ services:
 networks:
   codeflix_rabbitmq:
     driver: bridge
+
+volumes:
+  volume_rabbitmq:
+    driver: local
